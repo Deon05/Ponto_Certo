@@ -1,0 +1,35 @@
+{
+  "name": "ponto-certo",
+  "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node api/dev.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.87.1",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "vercel": "^49.1.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6"
+  },
+  "exports": {
+    "./*": {
+      "node": "./api/*.js",
+      "import": "./api/*.js",
+      "default": "./api/*.js"
+    },
+    "./shared/*": {
+      "node": "./public/shared/*",
+      "import": "./public/shared/*",
+      "default": "./public/shared/*"
+    }
+  }
+}

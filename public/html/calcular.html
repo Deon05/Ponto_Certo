@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ponto Certo</title>
+    <link rel="stylesheet" href="/css/estilos.css" type="text/css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "ponto-certo/shared/": "/shared/"
+        }
+      }
+    </script>
+    <script defer src="/js/chronometer.js" type="module"></script>
+    <script defer src="/js/logoff.js" type="module"></script>
+  </head>
+
+  <body class="body">
+    <div id="logo">
+      <img src="/resource/Logo_Ponto_Certo.png" alt="Logo Ponto Certo" width="400" height="180" />
+    </div>
+    <div id="linha">
+      <img src="/resource/linha.png" alt="Linha" width="1820" height="35" />
+    </div>
+    <div id="linkinicalcular">
+      <a href="/html/index.html" class="linkagem"><h3>Volte ao Início</h3></a>
+    </div>
+    <div id="div_container_calcular">
+      <div id="esquerda">
+        <h2 class="tam_esquerda" id="nome_funci">Olá, {{ name }}! Seu ID é {{ id: b{id=employeeID} }}</h2>
+        <br />
+        <h3 class="tam_esquerda" id="cronom">Cronômetro:</h3>
+        <div class="container">
+          <div class="timer">
+            <div class="time" id="hours">{{ hours }}</div>
+            <div class="separator">:</div>
+            <div class="time" id="minutes">{{ minutes }}</div>
+            <div class="separator">:</div>
+            <div class="time" id="seconds">{{ seconds }}</div>
+          </div>
+        </div>
+        <br /><br /><br />
+        <div id="botoes">
+          <button id="botao_verdebateponto" class="tam_botao">Entrada</button>
+          <button class="tam_botao" id="botao_vermelho">Saída</button>
+        </div>
+      </div>
+      <div id="direita">
+        <h1 class="tam_direita" id="horas_trab">Horas Trabalhadas</h1>
+        <table class="tabela" class="tam_table">
+          <tr class="tam_table">
+            <td class="cinza">Dia</td>
+            <td id="hora_dia" class="tam_tablehora">{{ day_worked_hours }}</td>
+          </tr>
+        </table>
+        <h2 class="tam_direita" id="horas_extr">Horas Extras</h2>
+        <table class="tabela">
+          <tr class="tam_tablehora">
+            <td id="hora_extras" class="cinza">{{ overtime }}</td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>
